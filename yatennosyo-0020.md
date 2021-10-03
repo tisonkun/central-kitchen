@@ -85,9 +85,33 @@ PG 社区的 Committers 页面比较朴素，而且由于维基页面缺少索�
 
 ## 开发流程
 
+PG 社区的开发流程可以从下面三个维基页面开始了解。
+
+* [So, you want to be a developer?](https://wiki.postgresql.org/wiki/So,_you_want_to_be_a_developer%3F)
+* [Development information](https://wiki.postgresql.org/wiki/Development_information)
+* [Developer FAQ](https://wiki.postgresql.org/wiki/Developer_FAQ)
+
+总的来说，也将开发活动分成 Bug 和 New Features 两种类型，以 CommitFest 的形式迭代。每个流程都非常简单，基本就是邮件列表承载所有讨论，每个人都可以基于技术能力平等地对话，最终达成共识后由 Committers 完成代码提交。
+
 ### Bug
 
+PG 社区是一个非常彻底的志愿者社区，这从他们跟踪处理 Bug 和 New Features 的方式就可以看出来。
+
+PG 社区只提供了报告 Bug 的手段。你可以填写 [Bug 提交表单](http://www.postgresql.org/support/submitbug/)或直接给 pgsql-bugs@postgresql.org 发邮件，提交表单后也是发到这个邮件列表。愿意关注和修复 Bug 的人会订阅这个邮件列表，参与讨论，并可能在 CommitFest 上提交一个修复。不过 PG 发展了很长时间，用户量巨大，很多报告上来的 Bug 只是理解有误或者使用不当。
+
+PG 社区的 Bug Tracker 只是 [pgsql-bugs 的归档](https://www.postgresql.org/list/pgsql-bugs/)，或者干脆就是它没有 Bug Tracker 一说。虽然通过表单报告上来的 Bug 会被分配一个编号，但是直接发给 pgsql-bugs 报告 Bug 的也不在少数。其次，Bug 的修复没有所谓的 Assignee 或者修复以后的关闭，这只是一个邮件列表而已。
+
+与之相对应的，CommitFest 上的 patch 会有专门的一个 Bug Fixes 分类，因此开发者是知道哪些问题被修复了的。Release Manager 也知道，所以会在 Release Note 当中对重大 Bug 的修复有体现。
+
+但是，总的来说，PG 社区的 Bug 修复是随缘的。整个社区以 over communication 的方式运转，没有复杂的流程和状态记录。要想知道你报告的问题现在是什么状态，最好的办法是在邮件列表里把原来的 thread 回复顶起来，PG 社区的参与者是我见到过相当纯粹和极度投入的，如果有人修了，我相信他本人或者另一个人会知道并告诉你。
+
+不过，如果有一个 Bug Tracker 应用，类似于 CommitFest 看板，我想对于 PG 的开发者和用户来说肯定也是一个体验的改进。只不过是社区的贡献者动辄参与十年以上，他们本身对这个流程已经非常熟悉，而作为新人很难提出一个新的工作方式要求现有的贡献者迁移过来。一个疏于维护的 Bug Tracker 没有作用，甚至会产生误导。也许只有某天一个德高望重的 Contributor 决心做这件事情，或者新人完成了应用的开发，制订出一个可行的迁移计划，再说服几个资深的 Contributor 一起推动，这件事才有可能有实质的进展吧。
+
+这其实也是一个成熟社区保护自己的方式。我想这些资深的开发者看过太多昙花一现的创意最终都被时间所淘汰，而现状又没有明显的缺点，这种情况下保持谨慎并关注到演进软件上才是创造核心价值的做法。
+
 ### Brand new features
+
+
 
 ### CommitFest
 
