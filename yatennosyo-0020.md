@@ -109,11 +109,66 @@ PG 社区的 Bug Tracker 只是 [pgsql-bugs 的归档](https://www.postgresql.or
 
 这其实也是一个成熟社区保护自己的方式。我想这些资深的开发者看过太多昙花一现的创意最终都被时间所淘汰，而现状又没有明显的缺点，这种情况下保持谨慎并关注到演进软件上才是创造核心价值的做法。
 
+Bug fixes 会被尽可能地 backport 到受影响的版本分支上。
+
 ### Brand new features
 
+New Features 在 PG 社区基本等同于前几天的文章 [The ZeroMQ Community](yatennosyo-0019.md) 介绍的愿望清单。PG 社区有一个 [TODO](https://wiki.postgresql.org/wiki/Todo) 页面松散的记录讨论过的想法创意和愿望清单，但是不保证会有人关注和实现，也不意味着这是合理甚至确定要做的工作。
 
+PG 社区的 New Features 流程仍然是邮件列表讨论，达成共识以后开始进入开发阶段，经由 CommitFest 窗口提交到主仓库中。
+
+```
+Desirability -> Design -> Implement -> Test -> Review -> Commit
+```
+
+上面这个流程就是 PG 社区的最佳实践。首先在邮件列表上讨论 New Features 的价值，大致对价值达成共识后讨论技术设计，再之后进入开发流程，即实现、回归测试、代码评审和最终提交。
+
+New Features 的唯一信源是 pgsql-hackers@postgresql.org 邮件列表上的讨论，同样是走的 over communication 路线。TODO 页面上对于每一个项目，可能会附上对应的讨论链接，也可能没有。获得实际状态，参与讨论或提出方案的方式仍然是发起邮件讨论。
+
+PG 社区强调成功的推动新功能或改进项的合并所需要的做的第一件事就是尽早尽快地在 pgsql-hackers 邮件列表上跟社区成员分享和讨论。这与我们提到过的 [Open Discussion](yatennosyo-0016.md) 和 [Public Design](yatennosyo-0015.md) 是相通的。
+
+我在和参与开源社区的同学沟通的时候也说，对于一个想做的工作，尽早在社区当中发起讨论，不用等到全部想清楚或者开始做了再说，这样整个生命周期拉长，留给其他社区成员知晓和各种形式的参与的空间大一些。
+
+PG 社区的志愿者属性在这一点上再一次体现。如果是企业主导的开源，由于企业的控制倾向和雇员多年以来做事的习惯，一旦把社区作为和企业对立起来的一个概念，他们在社区当中的参与就会变成自己讨论并私下决定以后“通知”社区。这种方式无法容纳两种不同背景的参与者都这么做，因此要么社区永远只有一个声音，要么主导者主动做出改变，以贡献者而非控制者的形式参与到社区开发当中来。
+
+New Features 只会发布到最新的大版本。PG 社区采用大版本和补丁版本的版本号形式，补丁版本的更新不会引入新的功能。
 
 ### CommitFest
+
+[CommitFest](https://commitfest.postgresql.org/) 简称 CF 是 PG 社区所有开发活动的核心流程，甚至说只有这个流程也不过分。
+
+不同于其他社区除发布前停止合并新代码以外随时随地开发和提交，PG 社区以不定期的代码评审活动的形式开放 patch 评审和合并的窗口。目前举办的 CF 活动均为每次一个月，每年四到五次。
+
+CF 活动有以下几个角色。
+
+CommitFest Manager (CFM) 负责整个 CF 活动各项事务的协调，包括邮件列表通知，为 patch 分配 Reviewer 和跟进所有 patch 的进度等等，非常繁忙。
+
+Reviewer 以 patch 为粒度，任何人都可以参与 review 工作。只需要在 CF 上注册登录以后进入 patch 详情页点击 Become Reviewer 按钮即可。CFM 在开始 CF 前会在 pgsql-rrreviewers 邮件列表上征集本次 CF 的志愿者，RRReviewer 即 Round Robin Reviewer 会在 CF 开始后由 CFM 轮询分配到所有的 patch 上。
+
+每个 patch 都会关联一个邮件，Review 实际也发生在邮件列表上。所有人都可以在 Open Statuses 之间流转状态，CF App 也支持用户订阅状态流转提醒。
+
+* Needs review 意味着 patch 刚刚提交或经过修订，等待 reviewer 的 review 意见。
+* Waiting on Author 意味着经过 review 以后有未决的问题或修订意见，需要 patch 作者回复。
+* Ready for Committer 通常由 reviewer 流转，指在经过 review 后等待 committer 做最后判断。
+
+CFM 会关注所有 patch 的进度，一个 patch 在一次 CF 当中的 Closed Status 有以下几种
+
+* Move to next CF 这是最常见的。当前 CF 窗口内无实质进展或有所推进后由于 reviewer 的时间等问题停滞，推迟到下个 CF 处理。
+* Returned with feedback 由于 patch 作者未回复而关闭。在当前 CF 周期内，patch 作者可以在邮件列表申诉后重新激活，或者在后续的 CF 活动中重新提交。不同于上一个状态会将 patch 自动顺延到下一个 CF 里，这个状态的 patch 已经离开 CF 的处理循环，需要作者明确地重新提交。
+* Committed 顺利通过 review 和 committer 的最终判断，合并到主仓库当中。
+* Withdrawn 主动撤回。
+* Rejected 明确拒绝。
+
+patch 详情页上会有具体的 patch attachment 文件，对于需要 backport 的改动，会有一系列的 patch 分别对应到每个分支上。
+
+考古发现 CF App 在 2014 年才开发出来并投入使用，PG 社区在 2010 年才开始使用 Git 做版本管理。对于开发的最佳实践，在维基上有一系列的页面从各个维度上做了介绍，也有不少贡献者自发撰写的案例。这里只做罗列，不做展开。
+
+* [CommitFest Checklist](https://wiki.postgresql.org/wiki/CommitFest_Checklist)
+* [Submitting a Patch](https://wiki.postgresql.org/wiki/Submitting_a_Patch)
+* [Regression test authoring](https://wiki.postgresql.org/wiki/Regression_test_authoring)
+* [Working with Git](https://wiki.postgresql.org/wiki/Working_with_Git)
+* [Creating Clean Patches](https://wiki.postgresql.org/wiki/Creating_Clean_Patches)
+* [Reviewing a Patch](https://wiki.postgresql.org/wiki/Reviewing_a_Patch)
 
 ### Release
 
