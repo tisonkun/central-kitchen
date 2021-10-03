@@ -139,6 +139,8 @@ New Features 只会发布到最新的大版本。PG 社区采用大版本和补�
 
 不同于其他社区除发布前停止合并新代码以外随时随地开发和提交，PG 社区以不定期的代码评审活动的形式开放 patch 评审和合并的窗口。目前举办的 CF 活动均为每次一个月，每年四到五次。
 
+除了 CF 以外，发布前 PG 社区也会直接合并发布所需要的代码。但是整个社区的前进节奏大致是跟着 CF 走的，少部分例外由 Committers 判断并在邮件列表上明确地提议和声明提交。
+
 CF 活动有以下几个角色。
 
 CommitFest Manager (CFM) 负责整个 CF 活动各项事务的协调，包括邮件列表通知，为 patch 分配 Reviewer 和跟进所有 patch 的进度等等，非常繁忙。
@@ -172,11 +174,26 @@ patch 详情页上会有具体的 patch attachment 文件，对于需要 backpor
 
 ### Release
 
+开发流程另一个值得关注的问题是 PG 如何做版本发布。
+
+PG 的版本计划在 [RoadMap 页面](https://www.postgresql.org/developer/roadmap/)上。这个页面不会说 PG 接下来要做什么工作，因为 PG 社区是纯粹由志愿者组成的，没有必须完成的需求一说。这个说法和 ZeroMQ 社区抛弃 RoadMap 的原因如出一辙。这个页面只包含了对大小版本的发布预期。
+
+大版本的发布由 [Release Management Team](https://wiki.postgresql.org/wiki/Release_Management_Team) 简称 RMT 完成。RMT 在发布前期在 Committers 当中达成共识选出，一般有 2-3 人。发布的检查内容非常之多，本段最后会列举出对应的阅读材料。总的来说，包括[测试](https://buildfarm.postgresql.org/cgi-bin/show_status.pl)和文档以及其他材料准备。
+
+小版本的发布和大版本类似，但是不会有正式的 RMT 来协调各项发布工作。实际上，大版本的 RMT 往往恰好是同时期的小版本发布的实际协调人。还是因为 PG 社区的版本出口最终由一个 7 人组成的 Core Team 审查，28 名 Committers 之间也有极高的互信，所以反而不需要复杂的流程。往往是在邮件列表上协调，走完发布前所需的检查和准备即可发布。
+
+在正式的大小版本之外，还有 Alpha 版本和 Beta 版本。Beta 版本其实是大版本的 Release Candidate 版本，而 Alpha 版本是每个 CommitFest 完成后打出来的一个快照，供前沿黑客使用。
+
+* [Release Management Team](https://wiki.postgresql.org/wiki/Release_Management_Team)
+* [Release process](https://wiki.postgresql.org/wiki/Release_process)
+* [ReleasePrep](https://wiki.postgresql.org/wiki/ReleasePrep)
+* [Alpha release process](https://wiki.postgresql.org/wiki/Alpha_release_process)
+* [Versioning Policy](https://www.postgresql.org/support/versioning/)
+
 ## QuickStart
 
 ## 总结
 
-
-
+总结地说，PG 社区的特点是，7 人组成的 Core Team 和 28 人组成的 Committers 队伍绝对的受信任。他们完全知道什么时候能做出决定，什么时候需要扩大讨论达成共识。在这个前提下，所有的流程都是松散的启发式的，Committers 和 Core Team 成员有能力做出正确的决定。
 
 Kubernetes 把社区玩成了一个游戏，PG 把社区玩成了一个精英俱乐部，沙龙。
