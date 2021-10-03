@@ -192,6 +192,18 @@ PG 的版本计划在 [RoadMap 页面](https://www.postgresql.org/developer/road
 
 ## QuickStart
 
+最后，在总结之前介绍一下如何快速开始 hacking PostgreSQL 项目。
+
+开发环境
+
+1. C 开发环境，Git 工具和 Perl 解释器。
+2. 克隆代码，`git clone http://git.postgresql.org/git/postgresql.git` 从主仓库克隆或者 `git clone https://github.com/postgres/postgres.git` 从 GitHub 镜像克隆。
+3. 标准的 `./configure && make` 命令，海量的配置选项和 Make 目标。
+
+订阅邮件列表，在[订阅管理页面](https://lists.postgresql.org/)上注册账号并订阅，相关邮件列表见前文。
+
+Happy hacking!
+
 ## 总结
 
 总结地说，PG 社区的特点是，7 人组成的 Core Team 和 28 人组成的 Committers 队伍绝对的受信任。他们完全知道什么时候能做出决定，什么时候需要扩大讨论达成共识。在这个前提下，所有的流程都是松散的启发式的，Committers 和 Core Team 成员有能力做出正确的决定。
