@@ -1,5 +1,5 @@
 ---
-title: '夜天之书 #24 Open Source is Not Business Model'
+title: '夜天之书 #24 Open Source is Not a Business Model'
 ---
 
 今天顺着在“开源之道”小组做的开源与商业模式的讨论写点东西。内容均出自我的发言，避免不小心引用别人的发言出问题。
