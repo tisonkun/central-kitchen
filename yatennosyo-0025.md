@@ -103,20 +103,35 @@ Active Contributor 是个事实，可以像 PG 社区一样展示 Major Contribu
 
 对于 Reviewer 角色，前文评价不多。除开层级结构的问题，再讲两个点。
 
-第一个是正式强调 Reviewer 角色对社区参与的伤害。
+第一个是强调 Reviewer 角色对社区参与的伤害。
 
-第二个是 Review 角色定义背后对贡献认知的偏差。no code contribution
+任何人都可以参与开源软件社区 PR 的 Review 是一个共识，没见过禁止没挂角色的 Contributor 参与 Review 的情形。有这个共识在，去设置 Reviewer 角色就显得很奇怪。一个能够有效的 Approve PR 却不能够 Merge PR 的角色，强行解释是他们懂了一点，但没有完全懂，需要 Committer 来做最终判断。
 
+这个说法乍一听是有道理的，但是其实 Reviewer 也能对某些 PR 是否可以 Merge 做出决定。这种现实的情况跟一刀切的模型是有出入的，极端的模型化思路甚至可以给 PR 评级，再给 Committer 评级，通过只能合并等级小于等于自己级别的 PR 来做到“完美”控制。开个玩笑，只是把设置 Reviewer 角色的思路推向极端。
+
+PG 社区当中任何人都可以 Review 任何补丁，并且是点击 Become Reviewer 就能做到，哪怕你是刚注册到 PG 社区 Code Review 平台 CommitFest 的用户。这里的假设是 Review 是一个谁都可以做的贡献，社区欢迎任何人针对补丁提出意见。Committer 会最终把关并协助合并代码。不存在有人的 Review “有用”，有人的 Review “没用”的情形。
+
+可能的争辩之一是没有这个意思，但是实际做了这样的事，势必会引起相对的反应。
+
+可能的争辩之二是 Reviewer 降低获得角色的门槛及时反馈提高参与度，这在某些情况下不无道理，但是有两个问题。一个是确实社区中存在某些成员认为 Review 是 Reviewer 的工作或者才能做的工作，而实际上 Review Open PR 是参与社区的好方式，去告诉 Contributor 你可以 Review PR 是一件看起来很傻的事情，这会因为你设置了 Review 角色而成为一个问题。另一个是运行一个好的开源社区并不需要主动降低角色门槛来赢得新的成员，这个思路是一种取巧，另一个思路是优化达到 Committer 门槛路上的体验，在保持高要求的情况下吸引和留住成员。
+
+发展一个 Committer 意味着非常高的信任程度，如果通过降低门槛来达到，最终会变成 Committer 自己大面积出现坏行为。中流砥柱腐化了，社区是无力维持的。
+
+第二个是 Reviewer 角色定义背后对贡献认知的偏差。Reviewer 言下之意是 Review PR 的人，也就是把贡献等同于代码贡献。这对在社区当中宣导非代码贡献是有负面作用的。
+
+最后，Reviewer 的定义很难跟 GitHub 的权限模型相结合。
+
+总的来说，Community 当中的角色以信任传递为逻辑发展新成员，取得相应角色意味着能够基于信任简化社区参与的流程，利用权力进一步参与社区，发展社区，主持事务，自由发挥和自我实现。Community 不应当设置类别繁多的角色来形成层级模型或落入形式主义的窠臼。
+
+Team 模型在这个原则下去掉了 Active Contributor 角色。对于 Reviewer 角色，直接去掉影响已经取得角色的社区成员的体验，于是折衷保留。
 
 **Team 模型取代 SIG 模型，实质上是 SIG 模型演进为代码仓库粒度。**
+
+
 
 **WG 模型消失。**
 
 ## 未来的工作
-
-Where SIG goes and why?
-
-Where WG goes?
 
 Team 的 principle
 公司与项目关系
