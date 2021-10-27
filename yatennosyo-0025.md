@@ -4,7 +4,7 @@ title: '夜天之书 #25 Evolving TiDB Governance'
 
 今天接着聊上一篇 [Evolving Governance](yatennosyo-0018.md) 发出来以后收到的问题，即开源社区的治理模型应当因地制宜，这个结论是我在参与 TiDB 社区的时候观察得到的，上一篇文章只讲了原治理模型遇到的问题，但是经过修订后的 TiDB 社区的治理模型如何没有直接讨论。
 
-本篇回答这个问题，即当前的 TiDB 社区治理模型是怎么样的，解决了哪些问题，还有哪些未来的工作。
+本篇回答这个问题，即当前的 TiDB 社区治理模型是怎么样的，解决了哪些问题，还有哪些未来的工作。同样放一个事先说明，随着开源协同行业经验的积累和从业人员的成熟，最佳实践总是越来越好的。讨论过程中会涉及具体的开源社区案例，早期阶段的案例或多或少有不足之处，大多是时代所限，正是这些前人探索的实例，才构成了今天可以分析和演进的基础。
 
 首先看到目前 TiDB 社区的治理模型图和上一篇介绍文章。
 
@@ -61,6 +61,51 @@ TiDB 社区的 Team 一共有八个，简要介绍如下。
 
 如果你的项目托管在 GitHub 上，GitHub 的模型定义了三层权限模型，随后扩展到五层。对于开源项目来说，只有 Write 和 Admin 是重要的，其中又以 Write 是最重要的。起步阶段的社区需要关注的是谁对代码仓库有写入权限，如何增加新的有写入权限的成员。通常来说，这会演化成 Committer + Maintainer 的结构，但是都合并成 Maintainer 也是可行的。
 
+这里面 Maintainer 的角色除了有代码仓库写入权限以外，主要是做项目层面的决策，尤其是成员的引入和突出，也即对应了 TiDB 社区 Team 模型下的 Maintainer 角色。
+
+Apache 项目采用了 Committer + Maintainer 的结构，其中 Maintainer 称为 PMC Member 并且有一些和基金会运行相关的细则。在 GitHub 上，不会有专门的 PMC Member 分组，而是统一用 committers 分组来为 Committers 和 PMC Member 授权。当然，在 ASF 的模型下 PMC Member 本身也是 Committer 的一员。
+
+其中有些项目例如 Apache Curator 就在这个模型上实际执行了全员 PMC Member 的策略，没有是 Committer 而不是 PMC Member 的成员，即上面提到的合并也是可行的。也有些项目例如 Apache TVM 在这个模型上实际额外引入了 Reviewer 角色，类似于 Team 模型下的 Reviewer 角色。其他还有 Apache Hadoop 的 Branch Committer 角色，就不加展开了。
+
+回到 Team 模型上来，Maintainer 角色定义改变是必然。先前模型的描述下，Maintainer 角色是游离于 SIG 模型的四层模型之外的。
+
+> 重度参与 TiDB 社区的开发者，从 Committer 中诞生，对代码 repo 拥有写权限。
+
+这其实不在 SIG 模型里，没人能够提名和产生新的 Maintainer 成员，所以它实际并没有存在。只有这个模型推出时指定的几个人挂名，也从未以 Maintainer 的身份有什么活动。
+
+所以 Team 模型的 Maintainer 角色某种意义上是取代了 (Co)Leader 的角色。这里有两点考量。
+
+其之一是原先的 Leader 和 CoLeader 是个非常莫名的区分，没有任何的区别，也不需要 Maintainer 和 CoMaintainer 来对应。
+
+其之二是用词区别下的角色定位的变化。我大概能理解 Leader 和 CoLeader 产生的缘由，即项目的 Leader 只有一个，其他同职责的成员就成为 CoLeader 以示区分。且不说实践当中有 SIG 直接就不管这些设定，而是直接在 Leader 栏写了几个人，凸显这个区分是个形式主义，单就假设 Leader 数量少到只有一个或几个人，就是开源社区运营上的一个误区。
+
+Apache 项目在 PMC Member 当中有一名 PMC Chair 成员，但 TA 主要是向 ASF 董事会做汇报的，类似于项目在 ASF 当中的法人代表。与 SIG 模型下 (Co)Leader 对应的 PMC Member 角色可由多人组成，例如 Apache Hadoop PMC 有 121 人，Apache Flink PMC 也有 36 人。这是项目发展带来的必然结果。
+
+如果把 Committer 排除在项目层面的决策之外，又仅有个位数的 (Co)Leader 支撑 SIG 的运转，是难以为继的。实际上，原模型发布之后曾经尝试持续组织双周会议就在一段时间后停滞。这里面有 SIG 切分粒度，可讨论事务的发现和具体技术运营的原因，也有组织者单点的原因。
+
+Committer 是中流砥柱不需要动，Maintainer 是正名和扩张队伍。接下来再说 Active Contributor 和 Reviewer 这两个角色。
+
+可以看到，在原模型的图示中，从 Active Contributor 到 Leader 是一个层级结构，而在新模型的图示中我刻意画成了并列结构。
+
+这里的原因如同 [夜天之书 #8](yatennosyo-0008.md) 中所说
+
+> Reviewer 和 Committer 的角色，不是社区当中的等级制度，而是一种信任的传递。社区的维护者赋予某位成员某个角色，不是升级或授予特权，而是基于信任简化社区参与的流程，同时鼓励这位成员进一步参与社区，发展社区，主持事务，自由发挥和自我实现。
+
+从 Active Contributor 到 Leader 的层级结构，以及原模型中角色“晋升”的 PR 数要求等等，都会形成一种社区是一个打怪升级的环境的印象。当然，以游戏的方式参与社区也不坏，但是“等级”带来的不公平感却是有害的。
+
+对于 Active Contributor 角色，前文评价如下
+
+> Active Contributor 没有任何权限，而且很容易从 commit history 或者 GitHub 的 Contributor Insights 里看到，为啥要在章程里专门罗列这样的角色？
+
+同时，在实践过程中，层级结构带来了等级观念。只是为了“晋升” Reviewer 而成为 Active Contributor 的情况是存在的，参与者在这里落入了形式主义的陷阱。实际上，根据个人的贡献，尤其在成员较少的社区，直接传递信任成为 Maintainer 的案例大有人在。至少一个人有资格成为 Reviewer / Committer 不需要一个 Active Contributor 的形式上的过渡阶段。
+
+Active Contributor 是个事实，可以像 PG 社区一样展示 Major Contributor 列表，但不用刻意去“晋升”。
+
+对于 Reviewer 角色，前文评价不多。除开层级结构的问题，再讲两个点。
+
+第一个是正式强调 Reviewer 角色对社区参与的伤害。
+
+第二个是 Review 角色定义背后对贡献认知的偏差。no code contribution
 
 
 **Team 模型取代 SIG 模型，实质上是 SIG 模型演进为代码仓库粒度。**
