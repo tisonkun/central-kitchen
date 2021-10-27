@@ -71,7 +71,7 @@ Apache 项目采用了 Committer + Maintainer 的结构，其中 Maintainer 称�
 
 > 重度参与 TiDB 社区的开发者，从 Committer 中诞生，对代码 repo 拥有写权限。
 
-这其实不在 SIG 模型里，没人能够提名和产生新的 Maintainer 成员，所以它实际并没有存在。只有这个模型推出时指定的几个人挂名，也从未以 Maintainer 的身份有什么活动。
+也就是 Maintainer 不在 SIG 模型里，没人能够提名和产生新的 Maintainer 成员，所以它实际并没有存在。只有这个模型推出时指定的几个人挂名，也从未以 Maintainer 的身份有什么活动。
 
 所以 Team 模型的 Maintainer 角色某种意义上是取代了 (Co)Leader 的角色。这里有两点考量。
 
@@ -93,7 +93,7 @@ Committer 是中流砥柱不需要动，Maintainer 是正名和扩张队伍。�
 
 从 Active Contributor 到 Leader 的层级结构，以及原模型中角色“晋升”的 PR 数要求等等，都会形成一种社区是一个打怪升级的环境的印象。当然，以游戏的方式参与社区也不坏，但是“等级”带来的不公平感却是有害的。
 
-对于 Active Contributor 角色，前文评价如下
+对于 Active Contributor 角色，上一篇文章评价如下
 
 > Active Contributor 没有任何权限，而且很容易从 commit history 或者 GitHub 的 Contributor Insights 里看到，为啥要在章程里专门罗列这样的角色？
 
@@ -101,7 +101,7 @@ Committer 是中流砥柱不需要动，Maintainer 是正名和扩张队伍。�
 
 Active Contributor 是个事实，可以像 PG 社区一样展示 Major Contributor 列表，但不用刻意去“晋升”。
 
-对于 Reviewer 角色，前文评价不多。除开层级结构的问题，再讲两个点。
+对于 Reviewer 角色，上一篇文章评价不多。除开层级结构的问题，再讲两个点。
 
 第一个是强调 Reviewer 角色对社区参与的伤害。
 
@@ -127,11 +127,36 @@ Team 模型在这个原则下去掉了 Active Contributor 角色。对于 Review
 
 **Team 模型取代 SIG 模型，实质上是 SIG 模型演进为代码仓库粒度。**
 
+Team 模型取代 SIG 模型，并不是重新发明一个全新的东西。社区治理总需要一个组织形式，叫它什么并不重要。SIG 模型和 Kubernetes 社区的 SIG 模型也不是一回事，有不少细微但是关键的差别。
 
+模型之内角色的差别上面已经聊得很多了。从模型本身来看，两个模型的关键差别就是粒度的差别。为此在演进提案下专门有一个子任务叫
 
-**WG 模型消失。**
+[Special Interest Groups should never divide repository](https://github.com/pingcap/community/issues/519)
+
+TiDB 主仓库被几个 SIG 切分，由 labeler 打 SIG label 来限制权限，其中 labeler 只考虑了 sig-sql-infra / sig-planner / sig-exec / sig-migrate 这四个，对于其他 SIG 改动 TiDB 的需求尤其是原先事务相关的开发者是走 TiKV 社区的 sig-transaction 凭着两个社区共享 Infra 的假设和一些绕过机制的姿势来处理 Review / Merge 需求的。
+
+这违背了两个原则之一的 GitHub 亲和性，同时理解谁能 Review 哪个 PR 以及谁能 Merge 哪个 PR 很反直觉，要人为说一段话解释。bot 的 comment 只会告诉你一个相关人员列表，但不会告诉你为啥。这个列表也是有问题的，这里就不展开了。
+
+另一方面，分类的工作非常繁琐，labeler 在相当一部分情况下不能正确工作。上一篇文章讲过，Kubernetes 社区的 OWNERS 方案能运行是建立在良好的模块化上的，部分项目也没搞得那么复杂，整个项目根目录一个 OWNERS 文件了事。TiDB 的代码组织情况不足以支撑 OWNERS 方案的假设。
+
+因此，新模型建立在代码仓库粒度上，只要你是 TiDB Team 的 Committer 之一，就能合并 TiDB 主仓库的代码。从此跟上面这些问题说再见。
+
+**WG 模式消失。**
+
+这个直接引用上一篇文章的介绍，形式主义且很久没人 follow 这个模式，直接移除。
+
+> WG 也是从 Kubernetes 照搬的机制，原本的作用是通过社区的影响力和传播渠道对一些主题讨论或开发项目形成的工作组进行曝光和吸引参与，但是由于 TiDB 社区人力受限，并没有能力为 WG 提供此类帮助或其他帮助，实际上搞 WG 只是形式上要写一堆材料而已。很快，也就没人搞这个了。
+> 
+> 不过 WG 这个概念是客观存在的，软件开发很少是一个人的工作，而一群工作在相同模块，开发同一个功能的人总有某种办法相互联系，其实这就是 SIG 和 WG 的起源。不过要求 WG 写各种申请材料，Zoom 每周例会，做定期报告，就太傻了。
 
 ## 未来的工作
 
-Team 的 principle
-公司与项目关系
+写到这里有点累了，未来的工作还有很多可做，这里只讲在社区治理上最重要的一点。
+
+**治理模型和规则应该简单，但是社区运营的分享应该丰富。**
+
+ASF 和 FSF 都有大量的文章阐述自己的历史沿革，创立理念和行事方式。Team 模型下新成员的发展在形式上是简单的，是一个提名和决议的过程。但是社区主观的寻找什么样的贡献者，认同什么样的开源协同理念，希望建设一个什么样的社区。这都是非常重要的。
+
+对于每一个 Team 来说，只有说清楚自己在寻找什么样的人，并且通过描绘愿景吸引对应的人加入到自己的团队，才有可能真正建立起一个围绕核心理念打造核心价值的坚实的社区。
+
+写不动了，先这样吧。
