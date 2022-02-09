@@ -173,10 +173,43 @@ Flink Forward 大会，KubeCon 大会，COSCon 中国开源年会，越来越多
 
 ## 我应该怎么做到？
 
-为什么要解决这个问题？
+前面讨论“我能为你做什么”的问题的时候，针对每一种可能的参与手段，其实已经或多或少回答了“应该怎么做”这个问题。因此，本段不再对前文已经提过的内容做复述，而是从回答“我应该怎么做到”这个角度出发，给出一个结构化的答案。
 
-内容
+我认为，要想解决潜在的参与者提出的“我应该怎么做到”参与贡献的问题，项目维护者应该从这三个方面入手。
 
-论坛
+* 内容
+* 论坛
+* 聊天室
 
-聊天室
+### 内容
+
+前文已经花了不少篇幅讨论为开源共同体创造内容是重要的贡献。这种贡献一部分就体现在能够回答“我应该怎么做到”这个问题上。
+
+不同于论坛和聊天室的形式，内容是一种较为单向的信息传递方式，即潜在的参与者单方面的接收内容（主要是文档）传递的信息。因此，内容应该着重考虑受众的体验，解答最为常见，答案最为明确甚至固定的问题。例如，共同体的角色划分和治理体系，共同体认可的价值观，报告缺陷、评审代码、提交补丁等活动的一般性流程等等。
+
+以 TiDB 开发者指南为例，其第二章 Contribute to TiDB 就是我和张翔专门为了回答“我应该怎么做到”撰写的文档，从它的结构就可以看出我们是如何系统性地回答这些问题的。
+
+* Community Guideline
+* Report an Issue
+* Issue Triage
+* Contribute Code
+* Cherry-pick a Pull Request
+* Review a Pull Request
+* Make a Proposal
+* Code Style and Quality Guide
+* Write Document
+* Committer Guide
+* Miscellaneous Topics
+
+其他成熟的开源共同体也有类似的材料。
+
+* [Python Developer's Guide](https://devguide.python.org/)
+* [rustc-dev-guide](https://rustc-dev-guide.rust-lang.org)
+* [Development information](https://wiki.postgresql.org/wiki/Development_information)
+* [Apache Flink: How To Contribute](https://flink.apache.org/contributing/how-to-contribute.html)
+
+更不用说称得上“卷帙浩繁”的 Apache 基金会的文档和 Kubernetes 共同体的文档。
+
+这些文档，加上共同体当中热衷于布道和培养新人的成员在博客和演讲上的内容分享，是潜在参与者了解如何具体参与一次贡献的直接材料。
+
+### 论坛 + 聊天室
