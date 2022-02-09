@@ -84,8 +84,39 @@ TiDB 开发者指南当中有专门的一个章节，告诉潜在的参与者他
 
 ### 代码之外的参与
 
-### 再谈代码贡献
+开源共同体虽然是围绕开源软件形成的，但是可能的参与形式远不止于代码贡献。[The Apache Way](https://www.apache.org/theapacheway/index.html) 经常被人引用的一点就是“共同体高于代码”。
 
+> **Community Over Code:** the maxim "Community Over Code" is frequently reinforced throughout the Apache community, as the ASF asserts that a healthy community is a higher priority than good code. Strong communities can always rectify problems with their code, whereas an unhealthy community will likely struggle to maintain a codebase in a sustainable manner.
+
+其实，这里的 community 是包括 code 的，两者并非互斥关系，只是强调决策的基点是共同体的利益，而不只是关注代码。不过，我们首先看到开源共同体当中代码之外的参与形式。
+
+**第一类是使用。**
+
+开发软件的最终目的是投入使用，因此，使用软件并报告反馈，本身就是参与贡献。我见过不少数据库开发人员，并不了解数据分析师和业务开发人员等具体用户到底是怎么使用数据库的，生产环境里最常见的用法，最常被使用的 SQL 特性，沉浸在内核开发当中的工程师未必能够非常准确的把握。通过测试软件在生产环境下的表现，使用真实业务负载验证软件最终交付的价值，对开源软件的打磨价值都是不可忽视的。
+
+TiDB 的 [AskTUG](https://asktug.com/t/topic/542887) 论坛上每天都有海量的问题。这些问题大部分都比较初级，但是初级问题反复出现，意味着开源项目的文档建设和知识库建设不够充分，缺少一个快速上手的文档和常见问题的列表（FAQ）。除去这部分问题，进阶的问题能够描述清楚一个具体的使用场景和遇到的障碍。这类问题往往可以使用某种技巧绕过，这些技巧集合起来，就是使用软件的最佳实践。
+
+前面提过，开发软件的最终目的是投入使用，而软件最终投入生产是一个复杂的过程，任何一个环节无法满足需求，没有绕过方案，都有可能导致用户放弃使用。而任何软件刚刚发布的时候，都是存在这样那样的问题的。通过使用软件并报告反馈，其实就是常说的“踩坑”过程，逐步把软件使用的“坑”给填平，开源软件触达更多用户也就成为可能。为什么 Java 生态比 C# 生态好这么多？为什么 Python 生态比 Elixir 生态好这么多？相当一部分原因就是在漫长的用户使用过程当中，许多未来用户可能遇到的问题，都被先行者给解决了。
+
+对于具备技术能力的开发者来说，使用上游软件并发现问题，还有可能是深入参与的契机。例如我在改进 Apache Flink 的高可用模块的时候，深入理解了 Apache ZooKeeper 和 Apache Curator 的设计实现，并以此为契机为两个项目做出贡献，并成为 Apache Curator PMC 的一员。
+
+另一方面，上面提到的旅程当中，除了使用者以外，还有一个角色就是答疑者。只有少部分提出问题的人，能够自己解决问题。大部分提出问题的人，都需要有另一个经验更丰富的共同体成员协助解决问题。
+
+AskTUG 论坛有版主机制，赋予积极答疑并愿意承担一定协调责任的成员版主的头衔和权限。通过开放合作，AskTUG 论坛聚集起近十位版主，为解答 TiDB 系列产品用户遇到的问题发挥了中流砥柱的作用。可以从[《TiDB 社区版主，一群平凡又伟大的 TiDBer》](https://asktug.com/t/topic/183426)一文当中窥见一二。
+
+Apache 基金会治下的项目共同体，往往也强调承担答疑职责的重要性和共同体对这种行为的认可。例如，Apache Flink 项目对 committer 候选人的第一个期待，就是能够积极回答用户问题
+
+> Community contributions include helping to answer user questions on the mailing list, ...
+
+**第二类是发布。**
+
+**第三类是文档。**
+
+**第四类是博客。**
+
+**第五类是活动。**
+
+### 再谈代码贡献
 
 ## 我应该怎么做到？
 
