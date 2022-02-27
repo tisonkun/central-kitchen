@@ -1,5 +1,5 @@
 ---
-title: '夜天之书 #42 开源社群简明分类'
+title: '夜天之书 #42 开源社群的分类'
 ---
 
 开源社群是围绕开源软件建立起来的，首先需要有一个可运行的、有价值的软件，然后才有相应的社群。
@@ -15,7 +15,9 @@ title: '夜天之书 #42 开源社群简明分类'
 
 ## 用户
 
-对于一个开源软件来说，首要建立的是用户社群。只有持续交付为用户创造价值的软件，软件才有生存的意义。对于托管在 GitHub 上的项目来说，最轻量级的用户社群方案就是 Discussion 的 Q&A 模块，例如 [Apache SkyWalking](https://github.com/apache/skywalking/discussions/categories/q-a) / [NexT](https://github.com/next-theme/hexo-theme-next/discussions/categories/q-a) / [tonic](https://github.com/hyperium/tonic/discussions/categories/q-a) 等等。
+对于一个开源软件来说，首要建立的是用户社群。只有持续交付为用户创造价值的软件，软件才有生存的意义。
+
+对于托管在 GitHub 上的项目来说，最轻量级的用户社群方案就是 Discussion 的 Q&A 模块，例如 [Apache SkyWalking](https://github.com/apache/skywalking/discussions/categories/q-a) / [NexT](https://github.com/next-theme/hexo-theme-next/discussions/categories/q-a) / [tonic](https://github.com/hyperium/tonic/discussions/categories/q-a) 等等。
 
 可以采取的行动
 
@@ -25,7 +27,11 @@ title: '夜天之书 #42 开源社群简明分类'
 
 ## 生态开发者
 
-繁荣的生态是开源软件生命力的重要组成部分。[AirByte](https://github.com/airbytehq/airbyte/blob/b5b09763551e6a6e53775bde74c7b8139e355b33/airbyte-integrations/connectors) 和 Apache Flink 甚至 PostgreSQL 都有丰富的生态。实际上，对于开源社群运营来说，生态是效率倍增最容易发生的方向。一个插件、策略替换点就是一个生态扩展点，推动生态开发者连接他最熟悉的生态是低门槛、持续积累高收益的活动。此外，终端用户最终使用的是解决方案，而不是软件本身。用户的场景可能涉及各种各样的软件，生态的连接能够降低用户组合不同软件构建解决方案的负担。
+繁荣的生态是开源软件生命力的重要组成部分。[AirByte](https://github.com/airbytehq/airbyte/blob/b5b09763551e6a6e53775bde74c7b8139e355b33/airbyte-integrations/connectors) 和 Apache Flink 甚至 PostgreSQL 都有丰富的生态。
+
+实际上，对于开源社群运营来说，生态是效率倍增最容易发生的方向。一个插件、策略替换点就是一个生态扩展点，推动生态开发者连接他最熟悉的生态是低门槛、持续积累高收益的活动。
+
+此外，终端用户最终使用的是解决方案，而不是软件本身。用户的场景可能涉及各种各样的软件，生态的连接能够降低用户组合不同软件构建解决方案的负担。
 
 可以采取的行动
 
@@ -34,7 +40,9 @@ title: '夜天之书 #42 开源社群简明分类'
 
 ## 内核开发者
 
-内核开发者是项目的核心开发者、维护者。在相当一段时间内，这就是同一个团队内全职开发项目的人。开源社群策略在这个方向上需要做的工作，是从软件工程角度定义项目的调性和开发工作流，并且对所有参与者采取同一套评价标准选择核心开发者和维护者。
+内核开发者是项目的核心开发者、维护者。在相当一段时间内，这就是同一个团队内全职开发项目的人。
+
+开源社群策略在这个方向上需要做的工作，是从软件工程角度定义项目的调性和开发工作流，并且对所有参与者采取同一套评价标准选择核心开发者和维护者。
 
 可以采取的行动
 
