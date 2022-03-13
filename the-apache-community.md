@@ -22,7 +22,7 @@ title: '夜天之书 #43 The Apache Community'
 
 如同 ASF 的联合创始人 Brian Behlendorf 所说，每当有人解决了一个问题或者实现了一个新功能，他出于一种朴素的分享精神，也就是“为什么不把补丁提交回共享的源代码当中呢”的念头，基于开源软件的协作就这样自然发生了。纪录片中有一位提到，她很喜欢 Apache 这个词和 a patchy software 的谐音，共享同一个软件的补丁（patches）就是开源精神最早诞生的形式。
 
-这是 Apache Community 的根基，我们将会看到这种朴素精神经过发展形成了一个怎样的共同体，在共同体的发展过程当中，这样的根基又是如何深刻的影响了 Apache 理念的方方面面。
+这是 Apache Community 的根基，我们将会看到这种朴素精神经过发展形成了一个怎样的共同体，在共同体的发展过程当中，这样的根基又是如何深刻地影响了 Apache 理念的方方面面。
 
 Apache Group 的工作模式还有一个重要的特征，那就是每个人都是基于自己的需求修复缺陷或是新增功能，在邮件列表上交流和提交补丁的个人，仅仅只是代表他个人，而没有一个“背后的组织”或者“背后的公司”。因此，ASF 的 [How it Works](https://www.apache.org/foundation/how-it-works.html) 文档中一直强调，在基金会当中的个体，都只是个体（individuals），或者称之为志愿者（volunteers）。
 
@@ -66,31 +66,38 @@ APL-2.0 的思路与之不同，它允许任何人以任何形式使用、修改
 
 ## 匠人精神
 
-11:00 打磨技艺，解决问题。
+Apache Community 关注开发者的需要。
 
-For developer
+Apache Group 成立 ASF 的原因，是在 Apache Httpd 流行起来以后，商业公司和社会团体开始寻求和这个围绕项目形成的群体交流。然而，缺少一个正式的法律实体让组织之间的往来缺乏保障和流程。因此，如同纪录片当中提到的，ASF 成立的主要原因，是为了支撑 Apache Httpd 项目。只不过当初的创始成员们很难想到的是，ASF 最终支撑了数百个开源项目。
 
-## The Apache Way
+不同于 Linux Foundation 是行业联盟，主要目的是为了促进其成员的共同商业利益，ASF 主要服务于开发者，由此支撑开源项目的开发以及开源共同体的发展。
 
-Response Second 23:00
-Leave the time to people to response
-Mailing list (Asynchronous) 72 hours
+举例来说，进入 ASF 孵化器的项目都能够在 [ASF Infra](https://infra.apache.org/) 的支持下运行自己的 apache.org 域名的网站，将代码托管在 ASF 仓库中上，例如 [Apache GitBox Repositories](https://gitbox.apache.org/repos/asf) 和 [Apache GitHub Organization](https://github.com/apache/) 等。这些仓库上运行着自由取用的开发基础设施，例如持续集成和持续发布的工具和资源等等。ASF 还维护了自己的邮件列表和文件服务器等一系列资源，以帮助开源项目建立起自己的共同体和发布自己的构件。
 
-TheApacheWay 27:00
-Community over code
-Individuals
+反观 Linux Foundation 的主要思路，则是关注围绕项目聚集起来的供应商，以行业联盟的形式举办联合市场活动扩大影响，协调谈判推出行业标准等等。典型地,例如 CNCF 一直致力于定义云上应用开发的标准，容器虚拟化技术的标准。上述 ASF Infra 关注的内容和资源，则大多需要项目开发者自己解决，这些开发者往往主要为一个或若干个供应商工作，他们解决的方式通常也是依赖供应商出力。
 
-## The Apache Incubator
+当然，上面的对比只是为了说明区别，并无优劣之分，也不相互对立。ASF 的创始成员 Brian Behlendorf 同时是 Linux Foundation 下 Open Source Security Foundation 的经理，以及 Hyperledger 的执行董事。
 
-Incubator 35:00
-diversity (users!)
+ASF 关注开发者的需要，体现出 Apache Community 及其成员对开发者的人文关怀。纪录片中谈到 ASF 治下项目的开发体验时，几乎每个人的眼里都有光。他们谈论着匠人精神，称赞知识分享，与人合作，以及打磨技艺的愉快经历。实际上，要想从 Apache 孵化器中成功毕业，相当部分的 mentor 关注的是围绕开源软件形成的共同体，能否支撑开源软件长久的发展和采用，这其中就包括共同体成员是否能够沉下心来做技术，而不是追求花哨的数字指标和人头凑数。
 
-代际传承 New Generation
+讲几个具体的开发者福利。
 
-## The People
+每个拥有 @apache.org 邮箱的人，即成为 ASF 治下项目 Committer 或 ASF Member 的成员，JetBrains 会提供免费的全家桶订阅授权码。我从 2019 年成为 Apache Flink 项目的 Committer 以后，已经三年沉浸在 IDEA 和 CLion 的包容下，成为彻底使用 IDE 主力开发的程序员了。
 
-姜宁老师
-吴晟老师
-琚致远
-Enrico Olivelli
-Flink Committers
+Apache GitHub Organization 下的 GitHub Actions 资源是企业级支持，这部分开销也是由 ASF 作为非营利组织募资和运营得到的资金支付的。基本上，如果你的项目成为 Apache 孵化器项目或顶级项目，那么和 GitHub Actions 集成的 CI 体验是非常顺畅的。Apache SkyWalking 只算主仓库就基于 GitHub Actions 运行了十多个端到端测试作业，Apache Pulsar 也全面基于 GitHub Actions 集成了自己的 CI 作业。
+
+提到匠人精神，一个隐形的开发者福利，其实是 ASF 的成员尤其是孵化器的 mentor 大多是经验非常丰富的开发者。软件开发不只是写代码，Apache Community 成员之间相互帮助，能够帮你跟上全世界最前沿的开发实践。如何提问题，如何做项目管理，如何发布软件，这些平日里在学校在公司很难有机会接触的知识和实践机会，在 Apache Community 当中只要你积极承担责任，都是触手可得的。
+
+当然，如何写代码也是开发当中最常交流的话题。我深入接触 Maven 开始于跟 Flink Community 的 Chesnay Schepler 的交流。我对 Java 开发的理解，分布式系统开发的知识，很大程度上也得到了 Apache Flink 和 Apache ZooKeeper 等项目的成员的帮助，尤其是 Till Rohrmann 和 Enrico Olivelli 几位。上面提到的 Ted Dunning 开始攻读博士的时候，我还没出生。但是我在项目当中用到 ZooKeeper 的 multi 功能并提出疑问和改进想法的时候，也跟他有过一系列的讨论。
+
+谈到技艺就会想起人，这也是 ASF 一直坚持以人为本带来的社群风气。
+
+我跟姜宁老师在一年前认识，交流 The Apache Way 期间萌生出相互认同。姜宁老师在 Apache 孵化器当中帮助众多项目理解 The Apache Way 并予以实践，德高望重。在今年的 ASF Members 年会当中，姜宁老师也被推举为 ASF Board 的一员。
+
+我跟吴晟老师在去年认识。他经常会强调开发者尤其是没有强烈公司背景的开发者的视角，多次提到这些开发者是整个开源生态的重要组成部分。他作为 PMC Chair 的 Apache SkyWalking 项目相信“没有下一个版本的计划，只知道会有下一个版本”，这是最佳实践的传播，也是伴随技术的文化理念的传播。SkyWalking 项目出于自己需要，也出于为开源世界添砖加瓦的动机创建的 [SkyWalking Eyes](https://github.com/apache/skywalking-eyes) 项目，被广泛用在不止于 ASF 治下项目，而是整个开源世界的轻量级的软件协议审计和 License Header 检查上。
+
+主要贡献在 Apache APISIX 的琚致远同学今年也被推选成为 Apache Members 的一员。他最让我印象深刻的是在 APISIX 社群当中积极[讨论社群建设的议题](https://lists.apache.org/thread/40spln9t62dz8dlwf0xg174g131t89fq)，以及作为 APISIX 发布的 GSoC 项目的 mentor 帮助在校学生接触开源，实践开源，锻炼技艺。巧合的是，他跟我年龄相同，于是我痛失 Youngest Apache Member 的噱头，哈哈。
+
+或许，参与 Apache Community 就是这样的一种体验。并不是什么复杂的叙事，只是找到志同道合的人做出好的软件。我希望能够为提升整个软件行业付出自己的努力，希望我（参与）制造的软件创造出更大的价值，这里的人看起来大都也有相似的想法，这很好。仅此而已。
+
+原本还想聊聊 The Apache Way 的具体内容，还有介绍 Apache Incubator 这个保持 Apache Community 理念常青，完成代际传承的重要机制，但是到此为止似乎也很好。Apache Community 的故事和经验很难用一篇文章讲完，这两个话题就留待以后再写吧。
